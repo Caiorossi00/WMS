@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./AddProdutoForm.css";
 
 function AddProdutoForm({ adicionarProduto }) {
   const [nome, setNome] = useState("");
@@ -30,27 +31,33 @@ function AddProdutoForm({ adicionarProduto }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        placeholder="Nome do produto"
-        value={nome}
-        onChange={(e) => setNome(e.target.value)}
-      />
-      <input
-        type="number"
-        placeholder="Quantidade inicial"
-        value={quantidade}
-        onChange={(e) => setQuantidade(e.target.value)}
-      />
-      <button type="submit" disabled={!nome || !quantidade}>
-        Adicionar Produto
-      </button>
+    <form className="add-produto-form" onSubmit={handleSubmit}>
+      <div>
+        <h1>Adicionar item</h1>
+        <input
+          className="form-input"
+          type="text"
+          placeholder="Nome do produto"
+          value={nome}
+          onChange={(e) => setNome(e.target.value)}
+        />
+        <input
+          className="form-input"
+          type="number"
+          placeholder="Quantidade inicial"
+          value={quantidade}
+          onChange={(e) => setQuantidade(e.target.value)}
+        />
+        <button
+          className="form-button"
+          type="submit"
+          disabled={!nome || !quantidade}
+        >
+          Adicionar Produto
+        </button>
+      </div>
 
-      {error && <p style={{ color: "red" }}>{error}</p>}
-      {success && (
-        <p style={{ color: "green" }}>Produto adicionado com sucesso!</p>
-      )}
+      {error && <p className="error-message">{error}</p>}
     </form>
   );
 }

@@ -1,16 +1,20 @@
 import React from "react";
+import "./SearchBar.css";
 
 function SearchBar({ onSearch }) {
-  const handleInputChange = (e) => {
-    onSearch(e.target.value);
+  const handleInputChange = (event) => {
+    onSearch(event.target.value);
   };
 
   return (
-    <input
-      type="text"
-      placeholder="Buscar produto"
-      onChange={handleInputChange}
-    />
+    <div className="search-bar">
+      <input
+        type="text"
+        placeholder="Buscar produto"
+        onChange={handleInputChange}
+      />
+      <i className="search-icon fas fa-search"></i>{" "}
+    </div>
   );
 }
 

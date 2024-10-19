@@ -1,0 +1,43 @@
+.add-produto-form {
+  display: flex;
+  width: fit-content;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 5vh;
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  text-align: center;
+  background-color: #d9d9d9;
+  margin-bottom: 10px;
+}
+
+.form-input::placeholder {
+  font-style: italic;
+  color: #939393;
+}
+
+.form-button {
+  width: fit-content;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  background-color: #00bf63;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-button:hover {
+  background-color: #59d8a3;
+}
+
+.error-message {
+  color: red;
+  margin-top: 10px;
+}

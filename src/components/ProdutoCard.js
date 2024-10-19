@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./ProdutoCard.css";
 
 function ProdutoCard({
   nomeProduto,
@@ -25,25 +26,23 @@ function ProdutoCard({
 
   return (
     <div className="produto-card">
+      <button className="btn-remover" onClick={() => removerProduto(id)}>
+        &times;
+      </button>
       <h3>{nomeProduto}</h3>
       <div className="quantidade">{quantidade}</div>
-      <button
-        onClick={diminuirQuantidade}
-        disabled={quantidade === 0}
-        style={{
-          backgroundColor: quantidade === 0 ? "#ccc" : "#f44336",
-          color: quantidade === 0 ? "#666" : "#fff",
-        }}
-      >
-        -
-      </button>
-      <button onClick={aumentarQuantidade}>+</button>
-      <button
-        onClick={() => removerProduto(id)}
-        style={{ backgroundColor: "#ff4d4d", color: "#fff" }}
-      >
-        Remover
-      </button>
+      <div className="btn-div">
+        <button
+          className="btn-decremento"
+          onClick={diminuirQuantidade}
+          disabled={quantidade === 0}
+        >
+          -
+        </button>
+        <button className="btn-incremento" onClick={aumentarQuantidade}>
+          +
+        </button>
+      </div>
     </div>
   );
 }

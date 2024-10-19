@@ -3,6 +3,8 @@ import ProdutoList from "./components/ProdutoList";
 import SearchBar from "./components/SearchBar";
 import AddProdutoForm from "./components/AddProdutoForm";
 import { registrarNoHistorico } from "./components/utils/historyUtils";
+import Logo from "./components/Logo";
+import Footer from "./components/Footer";
 
 function App() {
   const [produtos, setProdutos] = useState([]);
@@ -43,14 +45,15 @@ function App() {
 
   return (
     <div className="app">
-      <h1>Rota 2 - Gerenciamento de estoque</h1>
-      <AddProdutoForm adicionarProduto={adicionarProduto} />
+      <Logo />
+      <AddProdutoForm adicionarProduto={adicionarProduto} />{" "}
       <SearchBar onSearch={setTermoBusca} />
       <ProdutoList
         produtos={filtrarProdutos()}
         registrarHistorico={registrarHistorico}
         removerProduto={removerProduto}
       />
+      <Footer />
     </div>
   );
 }

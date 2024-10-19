@@ -1,5 +1,6 @@
 import React from "react";
 import ProdutoCard from "./ProdutoCard";
+import "./ProdutoList.css";
 
 function ProdutoList({ produtos, registrarHistorico, removerProduto }) {
   return (
