@@ -6,28 +6,45 @@ function AddProdutoForm({ adicionarProduto }) {
   const [quantidade, setQuantidade] = useState("");
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
     setSuccess(false);
 
+    if (loading) return;
+
+    setLoading(true);
+
     if (!nome) {
       setError("O nome do produto é obrigatório.");
+      setLoading(false);
       return;
     }
 
-    if (!quantidade || isNaN(quantidade) || parseInt(quantidade, 10) < 0) {
+    const quantidadeNumerica = parseInt(quantidade, 10);
+    if (!quantidade || isNaN(quantidadeNumerica) || quantidadeNumerica < 0) {
       setError(
         "A quantidade deve ser um número válido e maior ou igual a zero."
       );
+      setLoading(false);
       return;
     }
 
-    adicionarProduto(nome, parseInt(quantidade, 10));
-    setSuccess(true);
-    setNome("");
-    setQuantidade("");
+    try {
+      await adicionarProduto(nome, quantidadeNumerica);
+      setSuccess(true);
+      setNome("");
+      setQuantidade("");
+      setError("");
+      setTimeout(() => setSuccess(false), 3000);
+    } catch (error) {
+      console.error(error);
+      setError("Erro ao adicionar produto. Tente novamente.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -51,9 +68,9 @@ function AddProdutoForm({ adicionarProduto }) {
         <button
           className="form-button"
           type="submit"
-          disabled={!nome || !quantidade}
+          disabled={!nome || !quantidade || loading}
         >
-          Adicionar Produto
+          {loading ? "Adicionando..." : "Adicionar Produto"}
         </button>
       </div>
 
