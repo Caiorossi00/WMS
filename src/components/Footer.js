@@ -5,7 +5,9 @@ import logo from "./assets/logo.png";
 const Footer = () => {
   return (
     <div className="footer">
-      <img className="logo" src={logo} alt="Logo" />
+      <a href="https://www.instagram.com/caiorossi.dev" target="_blank" rel="noopener noreferrer">
+        <img className="logo" src={logo} alt="Logo" />
+      </a>
     </div>
   );
 };

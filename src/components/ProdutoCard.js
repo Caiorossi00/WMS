@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./ProdutoCard.css";
 
 function ProdutoCard({
@@ -8,7 +8,14 @@ function ProdutoCard({
   removerProduto,
   id,
 }) {
-  const [quantidade, setQuantidade] = useState(quantidadeInicial);
+  const [quantidade, setQuantidade] = useState(() => {
+    const quantidadeSalva = localStorage.getItem(`produto-${id}`);
+    return quantidadeSalva ? JSON.parse(quantidadeSalva) : quantidadeInicial;
+  });
+
+  useEffect(() => {
+    localStorage.setItem(`produto-${id}`, JSON.stringify(quantidade));
+  }, [quantidade, id]);
 
   const aumentarQuantidade = () => {
     const novaQuantidade = quantidade + 1;

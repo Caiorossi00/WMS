@@ -1,9 +1,31 @@
 .logo-container {
-  margin: 10vh 0 3vh 0;
+  margin: 7vh 0 0 0;
   text-align: center;
+  position: relative;
 }
 
-.fa-cube {
-  color: rgb(0, 0, 0);
-  font-size: 3em;
+.logo-header {
+  width: 100px;
+  padding: 0;
+  margin-bottom: 0;
+}
+
+.navigation-button {
+  width: fit-content;
+  padding: 10px;
+  border: none; 
+  border-radius: 2px;
+  background-color: #000000;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  min-width: 13em;
+}
+
+.navigation-button:hover {
+  background-color: #18ca80;
 }
