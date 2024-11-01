@@ -15,7 +15,11 @@ function Logo() {
       />
       <Link to={isHistoricoPage ? "/" : "/historico"}>
         <button className="navigation-button">
-          {isHistoricoPage ? "Voltar para a Página Inicial" : "Ver Histórico"}
+          {isHistoricoPage ? (
+            <i className="fa-solid fa-house fa-icons"></i>
+          ) : (
+            <i className="fa-solid fa-database fa-icons"></i>
+          )}
         </button>
       </Link>
     </div>

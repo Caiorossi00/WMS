@@ -12,20 +12,23 @@
 
 .navigation-button {
   width: fit-content;
-  padding: 10px;
+  width: 3em;
+  height: 3em;
+  background-color: rgb(0, 0, 0);
   border: none; 
-  border-radius: 2px;
-  background-color: #000000;
-  color: white;
+  border-radius: 4px;
+  color: rgb(0, 0, 0);
   cursor: pointer;
   transition: background-color 0.3s ease;
   position: absolute;
   right: 20px;
   top: 50%;
   transform: translateY(-50%);
-  min-width: 13em;
 }
 
-.navigation-button:hover {
-  background-color: #18ca80;
+.fa-icons {
+  color: rgb(255, 255, 255);
+  font-size: 18px; 
+  background: none; 
+  border: none;
 }
