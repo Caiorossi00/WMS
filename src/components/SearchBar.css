@@ -30,3 +30,18 @@
   color: #939393;
   cursor: pointer;
 }
+
+@media (max-width: 768px) {
+  .search-bar {
+    width: 70%;
+  }
+
+  .search-bar input {
+    padding: 8px;
+  }
+
+  .search-icon {
+    font-size: 1em;
+    margin-top: 1px;
+  }
+}

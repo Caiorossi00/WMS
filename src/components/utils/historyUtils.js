@@ -5,6 +5,7 @@ export const registrarNoHistorico = (
 ) => {
   const dataAtual = new Date();
   return {
+    id: Date.now(),
     nomeProduto,
     quantidadeAntiga,
     novaQuantidade,

@@ -51,6 +51,11 @@ function App() {
     setHistorico([...historico, novoRegistro]);
   };
 
+  const removerRegistro = (id) => {
+    const novoHistorico = historico.filter((registro) => registro.id !== id);
+    setHistorico(novoHistorico);
+  };
+
   const removerProduto = (id) => {
     setProdutos(produtos.filter((produto) => produto.id !== id));
   };
@@ -82,7 +87,12 @@ function App() {
           />
           <Route
             path="/historico"
-            element={<Historico historico={historico} />}
+            element={
+              <Historico
+                historico={historico}
+                removerRegistro={removerRegistro}
+              />
+            }
           />
         </Routes>
         <Footer />

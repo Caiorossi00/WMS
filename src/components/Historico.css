@@ -1,0 +1,88 @@
+.historico-container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.historico-title {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 25px;
+  text-align: center;
+  color: #333333;
+}
+
+.historico-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.historico-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  background-color: #f7f7f7;
+  transition: background-color 0.2s;
+}
+
+.historico-item:hover {
+  background-color: #e8e8e8;
+}
+
+.historico-item strong {
+  font-weight: bold;
+  color: #000000;
+}
+
+.historico-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.historico-date {
+  font-size: 0.9em;
+  color: #555555;
+}
+
+.historico-btn {
+  padding: 4px 8px;
+  background-color: #000000;
+  border: none;
+  border-radius: 2px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.historico-btn:hover {
+  background-color: #d20d0d;
+}
+
+@media (max-width: 768px) {
+  .historico-container {
+    max-width: 85%;
+    padding: 15px;
+  }
+
+  .historico-title {
+    font-size: 1.3em;
+  }
+
+  .historico-item {
+    padding: 10px 12px;
+  }
+
+  .historico-date {
+    font-size: 0.8em;
+  }
+
+  .historico-btn {
+    padding: 6px 10px;
+  }
+}

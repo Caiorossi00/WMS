@@ -42,3 +42,20 @@
   color: red;
   margin-top: 10px;
 }
+
+@media (max-width: 768px) {
+  .add-produto-form {
+    flex-direction: column;
+    width: 80%;
+  }
+
+  .form-input {
+    width: 100%;
+    padding: 8px;
+  }
+
+  .form-button {
+    width: 60%;
+    padding: 12px;
+  }
+}
